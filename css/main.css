@@ -1,0 +1,10 @@
+.token.selector{ color:black ;}
+.token.property{ color:black;}
+.token.punctuation{color:black;}
+.token.function{color:black;}
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box; 
+}
+
