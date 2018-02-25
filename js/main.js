@@ -10,7 +10,6 @@ var css1 = `/*
 }
 html{
  background:#005555;
- color:white;
  font-size:16px;
 }
 .styleBox{
@@ -28,6 +27,9 @@ html{
 .token.selector{ color: #690; }
 .token.punctuation{color:#999;}
 .token.property{ color: #905; }
+.token.function{color:#DD4A68;}
+.token.comment{ color:#708090;}
+html{color:white;}
 /* 加一个看起来不错的3D效果 */
 html{perspective: 1000px}
 .styleBox {
@@ -38,13 +40,13 @@ html{perspective: 1000px}
 /* 现在自我介绍 */
 /* 首先需要一张白纸 */
 #paper{
+  position: fixed; 
+  right: 0;
   background-color:white;
   margin:1em;
   box-sizing:border-box; 
-  width: 50%; 
-  right: 0; 
+  width: 50%;  
   padding: 1em;
-  position: fixed; 
   height: 95vh;
   color:black;
 }
@@ -102,7 +104,7 @@ function writerCss(prefix,code,fn){
     window.clearInterval(id)
     fn && fn.call()
   }
-},0)
+},40)
 
 }
 function writerMarkdown(prefix,code,fn){
