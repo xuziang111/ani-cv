@@ -1,5 +1,5 @@
-
-var css1 = `/* 
+!function(){
+let css1 = `/* 
 * 面试官你好，我是XXX
 * 只用文字作做我介绍太单调了
 * 我就用代码来介绍吧
@@ -55,7 +55,7 @@ html{perspective: 1000px}
 }
 /* 于是我就可以在白纸上写字了，请看右边 */
 `
-var md = `
+let md = `
 # 自我介绍
 我是xxx
 1996 年 12 月出生
@@ -78,7 +78,7 @@ XXX 学校毕业
 - [此简历代码](https://github.com/xuziang111/ani-cv)
 `
 
-var css2 = `
+let css2 = `
 /* 接下来用一个优秀的库 marked.js
 * 把 Markdown 变成 HTML
 */
@@ -89,7 +89,6 @@ let css3 = `
  * 谢谢观看
  */
 `
-console.log(marked('# Marked in browser\n\nRendered by **marked**.'));
 
 function writerCss(prefix,code,fn){
   let domCode = document.querySelector('#code')
@@ -128,10 +127,5 @@ writerCss('',css1,()=>{
       writerCss(css1 + css2,css3)
     })
   })
-} )
-// The code snippet you want to highlight, as a string
-var text = "html{background: #eee;font-size:16px;}"
-
-// Returns a highlighted HTML string
-var html = Prism.highlight(text, Prism.languages.css);
-
+})
+}
