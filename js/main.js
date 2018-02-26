@@ -90,11 +90,11 @@ let css3 = `
  */
 `
 
-function writerCss(prefix,code,fn){
+function writeCss(prefix,code,fn){
   let domCode = document.querySelector('#code')
   let styleBox = document.querySelector('.styleBox')
   let n = 0
-  let id = setInterval(function(){
+  let id = setInterval(() => {
   n += 1
   domCode.innerHTML = Prism.highlight(prefix + code.substring(0,n), Prism.languages.css);
   styleTag.innerHTML = prefix + code.substring(0,n)
@@ -106,10 +106,10 @@ function writerCss(prefix,code,fn){
 },40)
 
 }
-function writerMarkdown(prefix,code,fn){
+function writeMarkdown(prefix,code,fn){
   let paper = document.querySelector('#paper > .content')
   let n = 0
-  let id = setInterval(function(){
+  let id = setInterval(() => {
   n += 1
   paper.innerHTML = prefix + code.substring(0,n)
   if(n >= code.length){
@@ -119,13 +119,13 @@ function writerMarkdown(prefix,code,fn){
 },10)
 }
 
-writerCss('',css1,()=>{
-  writerMarkdown('',md,() =>{
-    writerCss(css1,css2,() =>{
+writeCss('',css1,()=>{
+  writeMarkdown('',md,() =>{
+    writeCss(css1,css2,() =>{
       let paper = document.querySelector('#paper > .content')
       paper.innerHTML = marked(md)
-      writerCss(css1 + css2,css3)
+      writeCss(css1 + css2,css3)
     })
   })
 })
-}
+}.call()
