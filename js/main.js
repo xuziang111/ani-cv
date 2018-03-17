@@ -49,6 +49,7 @@ html{perspective: 1000px}
   padding: 1em;
   height: 95vh;
   color:black;
+  overflow:auto;
 }
 #paper > .content {
   display: block;  
@@ -112,6 +113,7 @@ function writeMarkdown(prefix,code,fn){
   let id = setInterval(() => {
   n += 1
   paper.innerHTML = prefix + code.substring(0,n)
+  paper.scrollTo(0,styleBox.scrollHeight)
   if(n >= code.length){
     window.clearInterval(id)
     fn && fn.call()
